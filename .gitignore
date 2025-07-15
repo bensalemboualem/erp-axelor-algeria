@@ -1,0 +1,14 @@
+*.class
+target/
+*.log
+*.jar
+.idea/
+.vscode/
+*.iml
+.DS_Store
+node_modules/
+__pycache__/
+.env
+certificates/
+*.tmp
+uploads/
