@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: algeria_erp
+      POSTGRES_USER: algeria
+      POSTGRES_PASSWORD: algeria2025
+    ports:
+      - "5432:5432"
+  
+  backend:
+    build: ./backend-spring
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  
+  ai-agents:
+    build: ./ai-agents
+    ports:
+      - "8000:8000"
+  
+  frontend:
+    build: ./frontend-react
+    ports:
+      - "3000:3000"
